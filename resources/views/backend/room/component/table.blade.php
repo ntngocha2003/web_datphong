@@ -32,12 +32,13 @@
                     </td>
             
                     <td>
-                        {{$room->status}}
+                        {{$room->status===1 ? 'Còn trống': 'Đang được thuê'}}
                     </td>
                    
                     <td class="text-center">                 
-                        {{-- <a href="{{route('room.edit',$room->id)}}" class="btn btn-success"><i class="fa fa-edit"></i></a>
-                        <a href="{{route('room.delete',$room->id)}}" class="btn btn-danger"><i class="fa fa-trash"></i></a> --}}
+                        {{-- <a href="{{route('room.show', ['room' => $room->roomId, 'pageIndex' => $pageIndex])}}" class="btn btn-success"><i class="fa fa-eye"></i></a> --}}
+                        <a href="{{route('room.edit', ['room' => $room->roomId, 'pageIndex' => $pageIndex])}}" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+                        <a href="{{route('room.delete', ['room' => $room->roomId, 'pageIndex' => $pageIndex])}}" class="btn btn-danger "><i class="fa fa-trash"></i></a>
                     </td>
                 </tr>         
             @endforeach

@@ -24,7 +24,7 @@
                          </span>
                      </div>
                  </div>
-                 <a href="" class="btn btn-danger"><i class="fa fa-plus"></i>Thêm mới thành viên</a>
+                 <a href="{{route('room.create')}}" class="btn btn-success"><i class="fa fa-plus"></i>Thêm mới phòng</a>
              </div>
          </div>
     </div>

@@ -10,4 +10,5 @@ class Room extends Model
     protected $primaryKey='roomId';
     public $timestamps=false;
     use HasFactory;
+    protected $fillable = ['nameRoom', 'description', 'price', 'status'];
 }

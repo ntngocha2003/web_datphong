@@ -24,6 +24,7 @@
                     <a href="#"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboards</span> <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li><a href="{{route('room.index')}}">Quản lý phòng</a></li>
+                        {{-- <li><a href="{{route('user.index')}}">Quản lý khách hàng</a></li> --}}
                     </ul>
                 </li>
             </ul>

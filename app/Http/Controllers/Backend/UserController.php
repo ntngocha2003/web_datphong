@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
-use App\Models\OrderRoom;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class OrderRoomController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        //
+    public function index(){
+        
+        
     }
 
     /**
@@ -34,7 +34,7 @@ class OrderRoomController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(OrderRoom $orderRoom)
+    public function show(User $user)
     {
         //
     }
@@ -42,7 +42,7 @@ class OrderRoomController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(OrderRoom $orderRoom)
+    public function edit(User $user)
     {
         //
     }
@@ -50,7 +50,7 @@ class OrderRoomController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, OrderRoom $orderRoom)
+    public function update(Request $request, User $user)
     {
         //
     }
@@ -58,7 +58,7 @@ class OrderRoomController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(OrderRoom $orderRoom)
+    public function destroy(User $user)
     {
         //
     }
