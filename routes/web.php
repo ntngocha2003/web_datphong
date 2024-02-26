@@ -3,6 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\RoomController;
+use App\Http\Controllers\Backend\OrderRoomController;
+use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\UserController;
+use App\Http\Controllers\Frontend\AuthUserController;
+use App\Http\Controllers\Frontend\HomeUserController;
+use App\Http\Middleware\AuthenticateMiddleware;
+use App\Http\Middleware\LoginMiddleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,13 +25,13 @@ use App\Http\Controllers\Backend\RoomController;
 Route::get('/', function () {
     return view('welcome');
 });
-// loginadmin
+// loginAdmin
 
 Route::get('admin',
     [AuthController::class,'index']
 ) ->name('auth.admin');
 
-Route::post('login',
+Route::post('loginAdmin',
     [AuthController::class,'login']
 ) ->name('auth.login');
 
@@ -34,7 +41,33 @@ Route::get('logout',
 
 Route::get('dashboard/index',
     [DashboardController::class,'index']
-) ->name('dashboard.index');
+) ->name('dashboard.index')->middleware(AuthenticateMiddleware::class);
+
+// registerUser
+
+Route::get('register',
+[UserController::class,'create']
+) ->name('user.create');
+
+Route::post('store',
+[UserController::class,'store']
+) ->name('user.store');
+
+// loginUser
+
+Route::get('user',
+    [AuthUserController::class,'index']
+) ->name('auth.user');
+
+Route::post('loginUser',
+    [AuthUserController::class,'login']
+) ->name('auth.loginUser');
+
+// logoutUser
+Route::get('logout',
+    [AuthUserController::class,'logout']
+) ->name('auth.logout');
+
 
 // room
 Route::get('room/index',
@@ -69,3 +102,44 @@ Route::post('room/destroy',
 [RoomController::class,'destroy']
 ) ->name('room.destroy');
 
+// user
+Route::get('user/index',
+[UserController::class,'index']
+) ->name('user.index');
+
+Route::get('home/myaccount',
+[UserController::class,'myaccount']
+) ->name('home.myaccount');
+
+Route::put('home/updateAccount',
+[UserController::class,'updateAccount']
+) ->name('home.updateAccount');
+
+Route::get('user/delete',
+[UserController::class,'delete']
+) ->name('user.delete');
+
+Route::post('user/destroy',
+[UserController::class,'destroy']
+) ->name('user.destroy');
+
+// show room home
+Route::get('home/index',
+[HomeUserController::class,'index']
+) ->name('home.index');
+
+Route::get('home/roomDetail',
+[HomeUserController::class,'show']
+) ->name('home.roomDetail');
+
+Route::get('home/roomConfirm',
+[HomeUserController::class,'confirm']
+) ->name('home.roomConfirm');
+
+//  order room
+Route::get('order/myOrder',
+[HomeUserController::class,'myOrder']
+) ->name('order.myOrder');
+Route::post('order/store',
+[OrderRoomController::class,'store']
+) ->name('order.store');

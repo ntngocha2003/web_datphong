@@ -32,7 +32,7 @@
                     </td>
             
                     <td>
-                        {{$room->status===1 ? 'Còn trống': 'Đang được thuê'}}
+                        {{$room->status}}
                     </td>
                    
                     <td class="text-center">                 

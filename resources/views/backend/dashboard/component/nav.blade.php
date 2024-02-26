@@ -109,11 +109,11 @@
             </li>
 
 
-            {{-- <li>
+            <li>
                 <a href="{{route('auth.logout')}}">
                     <i class="fa fa-sign-out"></i> Đăng xuất
                 </a>
-            </li> --}}
+            </li>
             <li>
                 <a class="right-sidebar-toggle">
                     <i class="fa fa-tasks"></i>

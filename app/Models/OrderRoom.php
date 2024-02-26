@@ -9,5 +9,6 @@ class OrderRoom extends Model
 {
     protected $primaryKey='orderId';
     public $timestamps=false;
+    protected $fillable = [ 'userId','roomId', 'checkIn','checkOut','numberOfHour','totalMoney','status'];
     use HasFactory;
 }

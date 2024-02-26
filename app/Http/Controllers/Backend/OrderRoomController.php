@@ -3,8 +3,12 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Models\OrderRoom;
+use App\Models\Room;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Http\Requests\StoreRoomRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 class OrderRoomController extends Controller
 {
     /**
@@ -18,17 +22,30 @@ class OrderRoomController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function orderRoom()
     {
-        //
+        
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Room $room,Request $request)
     {
-        //
+        
+        $r = 1;
+        if($request->has('room')) $r = $request->input('room');
+        $create=$request->all();
+        $create['userId']=Auth::user()->userId;
+        $create['roomId']=$r;
+        $create['status']='Đang đặt';
+        if(OrderRoom::create($create) ){
+            $update['status']='Đã được đặt';
+            Room::find($r)->update($update);
+            return redirect()->route('order.myOrder')->with('success','Đặt phòng thành công');
+        }
+        
+        return redirect()->route('home.roomConfirm')->with('success','Đặt phòng không thành công');
     }
 
     /**

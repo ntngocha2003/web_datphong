@@ -12,10 +12,6 @@
          </div>
          <div class="action">
              <div class="uk-flex uk-flex-middle">
-                 {{-- <select name="user_catalogue_id" class="form-control mr10">            
-                         <option value="0">Chọn nhóm thành viên</option>
-                         <option value="1">QTV</option>
-                 </select> --}}
                  <div class="uk-search uk-flex uk-flex-middle mr10">
                      <div class="input-group">
                          <input type="text" name="keyword" value="" placeholder="Nhập từ khóa bạn muốn tìm kiếm..." class="form-control" />
