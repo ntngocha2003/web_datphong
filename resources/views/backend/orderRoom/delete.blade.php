@@ -1,13 +1,13 @@
-@include('backend.user.component.breadcrumb',['title'=>$config['seo']['delete']['title']])
+@include('backend.orderRoom.component.breadcrumb',['title'=>$config['seo']['delete']['title']])
 
-<form action="{{route('user.destroy', ['user' => $user->userId, 'pageIndex' => $pageIndex])}}" method="post" class="box">
+<form action="{{route('order.destroy', ['order' => $order->orderId, 'pageIndex' => $pageIndex])}}" method="post" class="box">
     @csrf
     <div class="wrapper wrapper-content animated fadeInRight">
         <div class="row">
             <div class="col-lg-4">
                 <div class="panel-head">
                     <div class="panel-title">
-                        Thông tin phòng cần xóa
+                        Thông tin phòng đặt cần xóa
                     </div>
                     <div class="panel-description">
                         <p>Bạn có chắc chắn xóa không ?</p>
@@ -31,7 +31,7 @@
                                         class="form-control"
                                         placeholder=""
                                        
-                                        value="{{$user->name}}"
+                                        value="{{$order->getNameUser()}}"
                                     />
                                     
                                 </div>
@@ -40,15 +40,15 @@
                             <div class="col-lg-6">
                                 <div class="form-row">
                                     <label class="control-label text-right">
-                                        Email
+                                        Tên phòng đặt
                                         <span class="text-danger">(*)</span>
                                     </label>
                                     <input
                                         type="text"
-                                        name="email"
+                                        name="nameRoom"
                                         class="form-control"
                                         placeholder=""
-                                        value="{{$user->email}}"
+                                        value="{{$order->getNameRoom()}}"
                                     />
                                     
                                 </div>
@@ -61,16 +61,16 @@
                             <div class="col-lg-6">
                                 <div class="form-row">
                                     <label class="control-label text-left">
-                                        CCCD
+                                        Tình trạng
                                         <span class="text-danger"></span>
                                     </label>
                                     <input
                                         type="text"
-                                        name="identification"
+                                        name="status"
                                         class="form-control"
                                         placeholder=""
                                         autocomplete="off"
-                                        value="{{$user->identification}}"
+                                        value="{{$order->status}}"
                                     />
                                 </div>
                             </div>
@@ -78,16 +78,16 @@
                             <div class="col-lg-6">
                                 <div class="form-row">
                                     <label class="control-label text-left">
-                                        Địa chỉ
+                                        Tổng tiền
                                         <span class="text-danger"></span>
                                     </label>
                                     <input
                                         type="text"
-                                        name="address"
+                                        name="totalMoney"
                                         class="form-control"
                                         placeholder=""
                                         autocomplete="off"
-                                        value="{{$user->address}}"
+                                        value="{{$order->totalMoney}}"
                                     />
                                 </div>
                             </div>
@@ -98,7 +98,7 @@
             </div>
         </div>
 
-        <button class="btn btn-primary mb15 mb15" type="submit"name="send"value="">Xóa khách hàng</button>
-        <a class="btn btn-danger mb15" href="{{route('user.index')}}" name="exit"value="">Hủy bỏ</a>
+        <button class="btn btn-primary mb15 mb15" type="submit"name="send"value="">Xóa đơn đặt phòng</button>
+        <a class="btn btn-danger mb15" href="{{route('order.index')}}" name="exit"value="">Hủy bỏ</a>
     </div>
 </form>

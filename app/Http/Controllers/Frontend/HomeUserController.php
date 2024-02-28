@@ -65,10 +65,8 @@ class HomeUserController extends Controller
 
     public function myOrder(OrderRoom $room,Request $request){
         $r=1;
-        if($request->has('order')) $r = $request->input('order');    
+        if($request->has('user')) $r = $request->input('user');    
         $orders= OrderRoom::where('userId', '=', $r)->get(); 
-        // $room =  Room::where('roomId', '=', $r)->get(); 
-        
         $config['seo']=config('apps.home');
         $template='frontend.homepage.home.orderRoom';
         return view('frontend.homepage.layout', compact('orders','config','template'));

@@ -46,7 +46,7 @@
                                         <a href="{{route('home.myaccount', ['home' => Auth::user()->userId])}}">Tài khoản của tôi</a>
                                     </div>
                                     <div class="header__navbar-user-item">
-                                        <a href="{{route('order.myOrder',['order' => Auth::user()->userId])}}">Phòng đặt</a>
+                                        <a href="{{route('order.myOrder',['user' => Auth::user()->userId])}}">Phòng đặt</a>
                                     </div>
         
                                     <div class="header__navbar-user-item header__navbar-user-item--separate">

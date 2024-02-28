@@ -102,10 +102,7 @@ Route::post('room/destroy',
 [RoomController::class,'destroy']
 ) ->name('room.destroy');
 
-// user
-Route::get('user/index',
-[UserController::class,'index']
-) ->name('user.index');
+// user/user
 
 Route::get('home/myaccount',
 [UserController::class,'myaccount']
@@ -114,6 +111,11 @@ Route::get('home/myaccount',
 Route::put('home/updateAccount',
 [UserController::class,'updateAccount']
 ) ->name('home.updateAccount');
+
+// user/admin
+Route::get('user/index',
+[UserController::class,'index']
+) ->name('user.index');
 
 Route::get('user/delete',
 [UserController::class,'delete']
@@ -137,9 +139,39 @@ Route::get('home/roomConfirm',
 ) ->name('home.roomConfirm');
 
 //  order room
+// user
 Route::get('order/myOrder',
 [HomeUserController::class,'myOrder']
 ) ->name('order.myOrder');
 Route::post('order/store',
 [OrderRoomController::class,'store']
 ) ->name('order.store');
+
+// admin
+Route::get('order/index',
+[OrderRoomController::class,'index']
+) ->name('order.index');
+
+Route::get('order/edit',
+[OrderRoomController::class,'edit']
+) ->name('order.edit');
+
+Route::post('order/updateCancel',
+[OrderRoomController::class,'updateCancel']
+) ->name('order.updateCancel');
+
+Route::post('order/updateBack',
+[OrderRoomController::class,'updateBack']
+) ->name('order.updateBack');
+
+Route::post('order/updateConfirm',
+[OrderRoomController::class,'updateConfirm']
+) ->name('order.updateConfirm');
+
+Route::get('order/delete',
+[OrderRoomController::class,'delete']
+) ->name('order.delete');
+
+Route::post('order/destroy',
+[OrderRoomController::class,'destroy']
+) ->name('order.destroy');

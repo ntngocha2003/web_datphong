@@ -95,8 +95,9 @@ class RoomController extends Controller
         // pageIndex
         $pageIndex = 1;
         if($request->has('pageIndex')) $pageIndex = $request->input('pageIndex');
-        
+       
         // update
+        $r =1;
         if($request->has('room')) $r = $request->input('room');
         if($room=Room::find($r)->update($request->all())){
             return redirect()->route('room.index', ['pageIndex' => $pageIndex])->with('success','Cập nhật thành công');
@@ -116,7 +117,7 @@ class RoomController extends Controller
          // pageIndex
          $pageIndex = 1;
          if($request->has('pageIndex')) $pageIndex = $request->input('pageIndex');
-         // show form edit
+     
          $config['seo']=config('apps.room');
          $template='backend.room.delete';
          return view('backend.dashboard.layout', compact( 'room','pageIndex','config','template'));
@@ -126,8 +127,7 @@ class RoomController extends Controller
     {
         $pageIndex = 1;
         if($request->has('pageIndex')) $pageIndex = $request->input('pageIndex');
-        
-        // update
+        $r =1;
         if($request->has('room')) $r = $request->input('room');
 
         if($room=Room::find($r)->destroy($request->all())){

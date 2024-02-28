@@ -1,4 +1,4 @@
-@include('backend.user.component.breadcrumb',['title'=> $config['seo']['index']['title']])
+{{-- @include('backend.orderRoom.component.breadcrumb',['title'=>$config['seo']['delete']['title']]) --}}
 <div class="row mt20">
     <div class="col-lg-12">
         <div class="ibox float-e-margins">

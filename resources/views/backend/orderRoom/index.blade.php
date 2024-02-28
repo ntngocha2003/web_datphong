@@ -1,4 +1,4 @@
-@include('backend.user.component.breadcrumb',['title'=> $config['seo']['index']['title']])
+@include('backend.orderRoom.component.breadcrumb',['title'=> $config['seo']['index']['title']])
 <div class="row mt20">
     <div class="col-lg-12">
         <div class="ibox float-e-margins">
@@ -7,9 +7,9 @@
                
             </div>
             <div class="ibox-content">
-                @include('backend.user.component.filter')
-                @include('backend.user.component.table')
-                @include('backend.user.component.paginating')
+                @include('backend.orderRoom.component.filter')
+                @include('backend.orderRoom.component.table')
+                @include('backend.orderRoom.component.paginating')
             </div>
         </div>
     </div>

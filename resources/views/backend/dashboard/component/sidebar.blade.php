@@ -25,6 +25,7 @@
                     <ul class="nav nav-second-level">
                         <li><a href="{{route('room.index')}}">Quản lý phòng</a></li>
                         <li><a href="{{route('user.index')}}">Quản lý khách hàng</a></li>
+                        <li><a href="{{route('order.index')}}">Quản lý đặt phòng</a></li>
                     </ul>
                 </li>
             </ul>

@@ -35,7 +35,7 @@ class OrderRoomSeeder extends Seeder
                 'roomId'=>$roomId,
                 'checkIn'=>$checkin,
                 'checkOut'=>$checkout,
-                'numberOfHour'=>$hours,
+                'numberOfDay'=>$hours,
                 'totalMoney'=>$totalMoney,
             ]);
         }
