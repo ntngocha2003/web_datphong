@@ -27,9 +27,7 @@ Route::get('/', function () {
 });
 // loginAdmin
 
-Route::get('admin',
-    [AuthController::class,'index']
-) ->name('auth.admin');
+Route::get('admin',[AuthController::class,'index']) ->name('auth.admin');
 
 Route::post('loginAdmin',
     [AuthController::class,'login']
@@ -64,9 +62,9 @@ Route::post('loginUser',
 ) ->name('auth.loginUser');
 
 // logoutUser
-Route::get('logout',
-    [AuthUserController::class,'logout']
-) ->name('auth.logout');
+Route::get('logoutUser',
+    [AuthUserController::class,'logoutUser']
+) ->name('auth.logoutUser');
 
 
 // room

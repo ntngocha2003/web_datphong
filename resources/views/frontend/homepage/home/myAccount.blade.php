@@ -17,21 +17,14 @@
                                                     <h2 class="title-user">Thông tin cá nhân</h2>
                                                   
                                                     <div class="block row">
-                                                        <div class="user_account-img col l-3 c-3 m-3">
-                                                           
-                                                            {{-- <img class="img-admin" src="./admin/image/avatar.png"style="
-                                                            width: 80px;
-                                                            height: 80px;
-                                                            border-radius: 50%;
-                                                            ">  --}}
-                                                        </div>
-                                                        <div class="fullname col l-9 c-9 m-9" style="
+                                                       
+                                                        <div class="fullname col l-12 c-12 m-12" style="
                                                                                                 display: flex;
                                                                                                 align-items: center;
                                                                                                 ">
                                                             <lable class="text-inner">Họ và tên: 
                                                                 <p name="name"class="last-name input"style="width: 100%; color: #bbb;font-size:1.4rem">
-                                                                   {{ Auth::user()->userId}}: {{Auth::user()->name}}
+                                                                   {{Auth::user()->name}}
                                                                 </p>
                                                             </lable>
                                                             

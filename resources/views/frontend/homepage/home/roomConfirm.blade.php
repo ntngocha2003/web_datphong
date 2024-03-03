@@ -33,6 +33,7 @@
                                                    
                                                     value="{{Auth::user()->name}}"
                                                 />
+                                                <br/>
                                                 @if ($errors->has('name'))
                                                     <span class="error-message">
                                                         *{{$errors->first('name')}}
@@ -55,6 +56,7 @@
                                                     placeholder=""
                                                     value="{{Auth::user()->phone}}"
                                                 />
+                                                <br/>
                                                 @if ($errors->has('phone'))
                                                     <span class="error-message">
                                                         *{{$errors->first('phone')}}
@@ -79,6 +81,7 @@
                                                     placeholder=""
                                                     value="{{Auth::user()->address}}"
                                                 />
+                                                <br/>
                                                 @if ($errors->has('address'))
                                                     <span class="error-message">
                                                         *{{$errors->first('address')}}
@@ -105,10 +108,10 @@
                                                     autocomplete="off"
                                                  
                                                 />
-            
-                                                @if ($errors->has('checkin'))
+                                                <br/>
+                                                @if ($errors->has('checkIn'))
                                                     <span class="error-message">
-                                                        *{{$errors->first('checkin')}}
+                                                        *{{$errors->first('checkIn')}}
                                                     </span>
                                                 @endif
                                             </div>
@@ -129,6 +132,12 @@
                                                     autocomplete="off"
                                                    
                                                 />
+                                                <br/>
+                                                @if ($errors->has('checkOut'))
+                                                    <span class="error-message">
+                                                        *{{$errors->first('checkOut')}}
+                                                    </span>
+                                                @endif
                                             </div>
                                         </div>
             
@@ -142,7 +151,7 @@
                     </div>
                     <div class="btn-action btn-action1">
 
-                        <a href="./home.php" class="btn-back">
+                        <a href="{{route('home.index')}}" class="btn-back">
                             <i class="fas fa-arrow-left"></i>
                             <span>Back to order</span>
                         </a>

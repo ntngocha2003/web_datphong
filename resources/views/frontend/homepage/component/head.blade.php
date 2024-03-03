@@ -1,7 +1,7 @@
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Admin_NgocHa</title>
+    <title>NgocHa</title>
 
     <link href="../frontend/font/themify-icons/themify-icons.css" rel="stylesheet">
     <link href="../frontend/gird/GirdSystem/gird.css" rel="stylesheet">

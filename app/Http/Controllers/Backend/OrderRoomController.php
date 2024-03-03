@@ -7,6 +7,7 @@ use App\Models\Room;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreRoomRequest;
+use App\Http\Requests\StoreOrderRoomRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use DateTime;
@@ -49,7 +50,7 @@ class OrderRoomController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(OrderRoom $orderRoom,Request $request)
+    public function store(OrderRoom $orderRoom,StoreOrderRoomRequest $request)
     {
         
         $r = 1;

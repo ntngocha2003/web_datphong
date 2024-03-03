@@ -36,8 +36,6 @@ class StoreRoomRequest extends FormRequest
             'description.required'=>'Bạn chưa nhập mô tả.',
             'price.required'=>'Bạn chưa nhập giá phòng.',
             'price.numeric'=>'Gía phòng nhập vào phải là số.',
-            // 're_price.required'=>'Bạn chưa nhập lại mật khẩu.',
-
         ];
     }
 }

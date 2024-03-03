@@ -81,19 +81,20 @@
  
   /* Button style */
   .btn {
-     min-width: 124px;
-     height: 34px;
-     text-decoration: none;
-     border: none;
-     border-radius: 2px;
-     font-size: 1.5rem;
-     padding: 0 12px;
-     cursor: pointer;
-     color:var(--text-color);
-     display:inline-flex;
-     justify-content: center;
-     align-items: center;
-     line-height: 1.6rem;
+    background-color: #1ab394c4;
+    min-width: 124px;
+    height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    padding: 0 12px;
+    cursor: pointer;
+    color: var(--white-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.6rem;
   }
  
   .btn.btn--normal:hover {
@@ -117,7 +118,58 @@
      background-color: #c3c3c3;
      color:#949494;
   }
- 
+ .btn-back{
+    text-decoration: none;
+    color: var(--primary-color);
+    display: block;
+    margin-top: 10px;
+    font-size: 1.4rem;
+ }
+ .btn-danger{
+    background-color: #e52222bf;
+    border-radius: 3px;
+    padding: 8px;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: azure;
+    float: right;
+ }
+ .form-control{
+    height: 25px;
+    color: #aaa;
+    font-size: 1.4rem;
+    border: 0;
+    border-radius: 3px;
+    margin-bottom: 10px;
+ }
+ .control-label{
+    display: block;
+    font-size: 1.4rem;
+    margin-bottom: -5px;
+ }
+ .text-danger{
+    color: red;
+ }
+ .btn-cancel{
+    border: 0;
+    font-size: 1.4rem;
+    color: var(--white-color);
+    background-color: red;
+    padding: 5px 30px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+ }
+ .btn-pay{
+    border: 0;
+    font-size: 1.4rem;
+    color: var(--white-color);
+    background-color: #1ab394c4;
+    padding: 5px 30px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    cursor: pointer;
+ }
+
   /* Selection */
   .select-input {
      position: relative;

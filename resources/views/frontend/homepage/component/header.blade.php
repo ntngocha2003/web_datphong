@@ -34,7 +34,7 @@
                                 
                             </div>
                        </li>
-                       @if (Auth::user()->name!==null) 
+                       @if(Auth::check()) 
 
                             <div class="header__navbar-item header__navbar-user" id="header__navbar-user">
                                 
@@ -50,16 +50,16 @@
                                     </div>
         
                                     <div class="header__navbar-user-item header__navbar-user-item--separate">
-                                        <a href="{{route('auth.logout')}}">Đăng xuất</a>
+                                        <a href="{{route('auth.logoutUser')}}">Đăng xuất</a>
                                     </div>
                                     
                                 </div>
                             </div>
                         @else
                         
-                            <li><a href="./registerClient.php" class="header__navbar-item header__navbar-item--strong header__navbar-item--separate btn-start--register">Đăng ký</a></li>
+                            <li><a href="{{route('user.create')}}" class="header__navbar-item header__navbar-item--strong header__navbar-item--separate btn-start--register">Đăng ký</a></li>
                 
-                            <li><a href="./loginClient.php" class="header__navbar-item header__navbar-item--strong btn-start--login">Đăng nhập</a></li>
+                            <li><a href="{{route('auth.user')}}" class="header__navbar-item header__navbar-item--strong btn-start--login">Đăng nhập</a></li>
                         @endif  
                    </ul>
                 </nav>
@@ -79,7 +79,7 @@
                     <div class="header__search">
                         <form action="home.php" method="POST" class="header__search-input-wrap">
                             
-                            <input type="text" value=""name="search" class="header__search-input" placeholder="Tìm kiếm sản phẩm">
+                            <input type="text" value=""name="search" class="header__search-input" placeholder="Tìm kiếm phòng">
                             <button type="submit" name="btnSearch" class="header__search-btn">
                                 <i class="header__search-btn-icon fas fa-search"></i>
                             </button>

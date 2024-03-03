@@ -7,7 +7,7 @@
                    Trang chủ/
                 </a>
             </li>
-            <li class="active"><strong>{{$title}}</strong></li>
+            <li class=""><strong>{{$title}}</strong></li>
         </ul>
     </div>
 </div>

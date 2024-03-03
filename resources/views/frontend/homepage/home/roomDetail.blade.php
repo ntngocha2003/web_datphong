@@ -27,7 +27,6 @@
                                 <div class="product-transport">
                                     <p class="transport">Đặt phòng: </p>
                                     <div class="product-transport--free">
-                                        <img class="img-free" src="./image/freeship.png">
                                         <p class="">Thanh toán sau khi nhận phòng</p>
                                     </div>
                                 </div>
@@ -36,8 +35,13 @@
                                     <p>Phòng này đã được đặt quý khách vui lòng chọn phòng khác</p>
                                     <a class="btn btn-danger mb15" href="{{route('home.index')}}" name="exit"value="">Quay lại</a>
                                 @else
-                                    <a class="btn btn-primary mb15" href="{{route('home.roomConfirm', ['home' => $room->roomId, 'pageIndex' => $pageIndex])}}">Đặt phòng</a>
-                               
+                                    @if (Auth::check())
+                                        <a class="btn btn-primary mb15" href="{{route('home.roomConfirm', ['home' => $room->roomId, 'pageIndex' => $pageIndex])}}">Đặt phòng</a>
+                                    @else
+                                        <li><a href="{{route('user.create')}}" class="">Đăng ký</a></li>
+                    
+                                        <li><a href="{{route('auth.user')}}" class="">Đăng nhập</a></li>
+                                    @endif
                                 @endif
                             </form>
                             
@@ -50,7 +54,7 @@
                     </div>
                     <div class="btn-action btn-action1">
 
-                        <a href="./home.php" class="btn-back">
+                        <a href="{{route('home.index')}}" class="btn-back">
                             <i class="fas fa-arrow-left"></i>
                             <span>Back to order</span>
                         </a>
